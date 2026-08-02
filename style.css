@@ -47,7 +47,14 @@ body{
     min-height:100vh;
     display:flex;
     align-items:center;
-    background:#fff5fa;
+
+    background-image:
+    linear-gradient(rgba(230,240,250,.45),
+    rgba(255,255,255,.45)),
+    url("home-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
     padding-top:80px;
 }
 
@@ -126,6 +133,14 @@ body{
 
 #about{
     padding:100px 0;
+
+    background-image:
+    linear-gradient(rgba(255,255,255,.85),
+    rgba(255,255,255,.85)),
+    url("aboutbg2.jpg");
+
+    background-size:cover;
+    background-position:center;
 }
 
 .about-card{
@@ -151,7 +166,14 @@ body{
 
 #favorite{
     padding:100px 0;
-    background:#fff5fa;
+
+    background-image:
+    linear-gradient(rgba(245,250,255,.75),
+    rgba(255,255,255,.75)),
+    url("fav\ things.jpg");
+
+    background-size:cover;
+    background-position:center;
 }
 
 
@@ -186,6 +208,14 @@ body{
 
 #projects{
     padding:100px 0;
+
+    background-image:
+    linear-gradient(rgba(220,235,245,.7),
+    rgba(255,255,255,.7)),
+    url("project.jpg");
+
+    background-size:cover;
+    background-position:center;
 }
 
 
@@ -219,10 +249,16 @@ body{
 
 /* ================= QUOTE ================= */
 
-
 #quote{
-    padding:100px 0;
-    background:#fff5fa;
+    padding:120px 0;
+
+    background-image:
+    linear-gradient(rgba(20,35,60,.45),
+    rgba(20,35,60,.45)),
+    url("quote-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
 }
 
 
@@ -247,8 +283,15 @@ body{
 
 #contact{
     padding:100px 0;
-}
 
+    background-image:
+    linear-gradient(rgba(255,255,255,.65),
+    rgba(255,255,255,.65)),
+    url("contact-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
+}
 
 .contact-card{
     background:white;
