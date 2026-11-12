@@ -427,3 +427,749 @@ footer{
     margin: 5px 0 0;
     font-size: 14px;
 }
+/* ================= GUESTBOOK ================= */
+
+#guestbook{
+    padding:100px 0;
+    background-image:
+    linear-gradient(rgba(255,255,255,.75),
+    rgba(255,255,255,.75)),
+    url("contact-bg.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+.guestbook-wrapper{
+    max-width:750px;
+    margin:auto;
+    padding:45px;
+    background:white;
+    border-radius:35px;
+    box-shadow:0 15px 35px rgba(236,163,194,.2);
+}
+
+.guestbook-heading{
+    text-align:center;
+    color:#cb6b95;
+    font-family:'Cormorant Garamond',serif;
+    font-size:45px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.guestbook-label{
+    text-align:center;
+    color:#888;
+    margin-bottom:35px;
+}
+
+.guestbook-form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.guestbook-input-group{
+    width:100%;
+}
+
+.guestbook-input-group label{
+    display:block;
+    color:#cb6b95;
+    margin-bottom:8px;
+    font-weight:500;
+}
+
+.guestbook-input-group input,
+.guestbook-input-group textarea{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:1px solid #f2bfd4;
+    border-radius:20px;
+    font-family:'Poppins',sans-serif;
+    color:#666;
+    background:white;
+    outline:none;
+    box-sizing:border-box;
+}
+
+.guestbook-input-group input:focus,
+.guestbook-input-group textarea:focus{
+    border-color:#e89ab7;
+    box-shadow:0 0 10px rgba(232,154,183,.3);
+}
+
+.guestbook-input-group textarea{
+    min-height:140px;
+    resize:vertical;
+}
+
+.guestbook-submit{
+    display:inline-block;
+    width:100%;
+    padding:13px;
+    border:none;
+    border-radius:50px;
+    background:#e89ab7;
+    color:white;
+    font-family:'Poppins',sans-serif;
+    transition:.3s;
+}
+
+.guestbook-submit:hover{
+    background:#cb6b95;
+}
+
+.guestbook-footer{
+    text-align:center;
+    color:#999;
+    font-size:13px;
+    margin-top:25px;
+}
+
+@media(max-width:768px){
+    .guestbook-wrapper{
+        padding:30px 20px;
+    }
+
+    .guestbook-heading{
+        font-size:38px;
+    }
+}
+
+/* ================= GUESTBOOK SUCCESS POPUP ================= */
+
+.success-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(70, 50, 60, 0.4);
+}
+
+.success-popup.show {
+    display: flex;
+    animation: popupFade .35s ease;
+}
+
+.success-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 30px;
+    border-radius: 30px;
+    background: #fffdfd;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, .15);
+    animation: popupRise .45s ease;
+}
+
+.success-card h2 {
+    color: #cb6b95;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 35px;
+    margin: 15px 0 10px;
+}
+
+.success-card p {
+    color: #888;
+    line-height: 1.8;
+}
+
+.envelope-animation {
+    position: relative;
+    width: 100px;
+    height: 90px;
+    margin: 0 auto 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.envelope-animation > i {
+    color: #e89ab7;
+    font-size: 65px;
+    animation: envelopeBounce 1s ease infinite;
+}
+
+.sparkle {
+    position: absolute;
+    color: #cb6b95;
+    animation: sparkle 1.4s ease infinite;
+}
+
+.sparkle-one {
+    top: 0;
+    left: 5px;
+}
+
+.sparkle-two {
+    top: 5px;
+    right: 5px;
+    animation-delay: .4s;
+}
+
+.sparkle-three {
+    bottom: 0;
+    right: 10px;
+    animation-delay: .8s;
+}
+
+.success-card button {
+    margin-top: 15px;
+    padding: 11px 35px;
+    border: none;
+    border-radius: 50px;
+    background: #e89ab7;
+    color: white;
+    transition: .3s;
+}
+
+.success-card button:hover {
+    background: #cb6b95;
+}
+
+.guestbook-error {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: 90%;
+    padding: 15px 22px;
+    border-radius: 20px;
+    background: white;
+    color: #cb6b95;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .12);
+    text-align: center;
+}
+
+.guestbook-error.show {
+    display: block;
+}
+
+@keyframes popupFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes popupRise {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes envelopeBounce {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-9px) rotate(5deg); }
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: .3;
+        transform: scale(.7);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+
+/* =================================
+   SOFT FAIRYTALE SCROLL ANIMATION
+================================= */
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.22, 1, .36, 1);
+}
+
+.scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animasi foto profil */
+.hero-photo.scroll-reveal {
+    transform: translateY(35px) scale(.96);
+}
+
+.hero-photo.scroll-reveal.is-visible {
+    transform: translateY(0) scale(1);
+}
+
+/* Hover kartu favorit dan puisi */
+.fav-card,
+.project-card {
+    transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.fav-card.scroll-reveal.is-visible:hover,
+.project-card.scroll-reveal.is-visible:hover {
+    transform: translateY(-7px);
+}
+
+/* Animasi HP */
+@media (max-width: 768px) {
+    .scroll-reveal {
+        transform: translateY(25px);
+        transition-duration: .7s;
+    }
+
+    .hero-photo.scroll-reveal {
+        transform: translateY(25px) scale(.97);
+    }
+
+    .hero-photo.scroll-reveal.is-visible {
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Pengaturan aksesibilitas */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+/* SOFT FAIRYTALE SCROLL ANIMATION */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.22, 1, .36, 1);
+}
+
+.scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .scroll-reveal {
+        transform: translateY(25px);
+        transition-duration: .7s;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* =========================================
+   SOFT FAIRYTALE SCROLL REVEAL
+========================================= */
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+.scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ANIMASI KHUSUS FOTO PROFIL */
+.hero-photo.scroll-reveal {
+    transform: translateY(35px) scale(0.96);
+}
+
+.hero-photo.scroll-reveal.is-visible {
+    transform: translateY(0) scale(1);
+}
+
+/* ANIMASI HP */
+@media (max-width: 768px) {
+    .scroll-reveal {
+        transform: translateY(25px);
+        transition-duration: 0.7s;
+    }
+
+    .hero-photo.scroll-reveal {
+        transform: translateY(25px) scale(0.97);
+    }
+
+    .hero-photo.scroll-reveal.is-visible {
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* AKSESIBILITAS */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-reveal,
+    .hero-photo.scroll-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+/* ===== ELEGANT CINEMATIC ANIMATION ===== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 1s ease,
+        transform 1s cubic-bezier(.2, .65, .3, 1);
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Foto profil */
+.hero-photo {
+    animation: photoEntrance 1.5s ease both;
+}
+
+@keyframes photoEntrance {
+    from {
+        opacity: 0;
+        transform: scale(.94);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Kartu puisi */
+.poem-card,
+.card {
+    transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.poem-card:hover,
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(120, 80, 100, .12);
+}
+
+/* Navbar */
+.navbar {
+    transition: background-color .4s ease, box-shadow .4s ease;
+}
+/* ===== CUTE SOCIAL BUTTON ANIMATION ===== */
+
+.social-links a,
+.contact a,
+.btn-social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all .35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efek saat disentuh kursor */
+.social-links a:hover,
+.contact a:hover,
+.btn-social:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(220, 150, 180, .25);
+}
+
+/* Ikon bergerak sedikit */
+.social-links a i,
+.contact a i,
+.btn-social i {
+    transition: transform .4s ease;
+}
+
+.social-links a:hover i,
+.contact a:hover i,
+.btn-social:hover i {
+    transform: rotate(-12deg) scale(1.15);
+}
+
+/* Efek ketika diklik */
+.social-links a:active,
+.contact a:active,
+.btn-social:active {
+    transform: scale(.92);
+}
+
+/* Animasi untuk layar sentuh */
+@media (hover: none) {
+    .social-links a:active,
+    .contact a:active,
+    .btn-social:active {
+        transform: scale(.92);
+        box-shadow: 0 5px 15px rgba(220, 150, 180, .3);
+    }
+}
+/* ===== ELEGANT NAVBAR ===== */
+
+.navbar .nav-link {
+    position: relative;
+    transition: color .3s ease, transform .3s ease;
+}
+
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 3px;
+    width: 0;
+    height: 2px;
+    background: #d99bb5;
+    border-radius: 10px;
+    transform: translateX(-50%);
+    transition: width .35s ease;
+}
+
+.navbar .nav-link:hover {
+    color: #c47f9d;
+    transform: translateY(-2px);
+}
+
+.navbar .nav-link:hover::after {
+    width: 65%;
+}
+
+/* ===== TOMBOL LIHAT PUISI ===== */
+
+.btn-puisi,
+.poem-button {
+    transition: transform .3s ease,
+                box-shadow .3s ease,
+                background-color .3s ease;
+}
+
+.btn-puisi:hover,
+.poem-button:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 8px 22px rgba(190, 120, 155, .25);
+}
+
+.btn-puisi:active,
+.poem-button:active {
+    transform: scale(.94);
+}
+
+/* Ikon panah */
+.btn-puisi i,
+.poem-button i {
+    display: inline-block;
+    transition: transform .3s ease;
+}
+
+.btn-puisi:hover i,
+.poem-button:hover i {
+    transform: translateX(5px);
+}
+
+/* =====================================
+   SCROLL REVEAL ANIMATION - PC & MOBILE
+===================================== */
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(45px);
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s cubic-bezier(.22, 1, .36, 1);
+    will-change: opacity, transform;
+}
+
+/* Ketika elemen terlihat */
+.scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animasi foto */
+.hero-photo.scroll-reveal {
+    transform: translateY(35px) scale(.94);
+}
+
+.hero-photo.scroll-reveal.is-visible {
+    transform: translateY(0) scale(1);
+}
+
+/* Animasi kartu */
+.fav-card,
+.project-card,
+.about-card,
+.contact-item {
+    transition:
+        transform .5s ease,
+        box-shadow .5s ease;
+}
+
+/* Tampilan HP */
+@media (max-width: 768px) {
+
+    .scroll-reveal {
+        transform: translateY(30px);
+        transition-duration: .75s;
+    }
+
+    .hero-photo.scroll-reveal {
+        transform: translateY(25px) scale(.96);
+    }
+
+    .hero-photo.scroll-reveal.is-visible {
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Aksesibilitas */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* =====================================
+   CUTE BUTTON INTERACTION ANIMATION
+===================================== */
+
+/* Semua tombol dan link yang bisa diklik */
+button,
+.btn,
+a.btn,
+.social a,
+.contact-item,
+.nav-link,
+.guestbook-submit,
+.success-card button {
+    position: relative;
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background-color .3s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Efek hover */
+button:hover,
+.btn:hover,
+.social a:hover,
+.contact-item:hover,
+.guestbook-submit:hover,
+.success-card button:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 8px 20px rgba(203, 107, 149, .22);
+}
+
+/* Efek saat diklik */
+button:active,
+.btn:active,
+.social a:active,
+.contact-item:active,
+.guestbook-submit:active,
+.success-card button:active {
+    transform: scale(.94);
+    box-shadow: none;
+}
+
+/* Efek kilau tombol */
+.btn-pink,
+.guestbook-submit,
+.success-card button {
+    overflow: hidden;
+}
+
+.btn-pink::before,
+.guestbook-submit::before,
+.success-card button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.45),
+        transparent
+    );
+    transform: skewX(-25deg);
+    transition: left .6s ease;
+}
+
+.btn-pink:hover::before,
+.guestbook-submit:hover::before,
+.success-card button:hover::before {
+    left: 150%;
+}
+
+/* Ikon ikut bergerak */
+button i,
+.btn i,
+.social a i,
+.contact-item i {
+    transition: transform .35s ease;
+}
+
+button:hover i,
+.btn:hover i,
+.social a:hover i,
+.contact-item:hover i {
+    transform: scale(1.15) rotate(-8deg);
+}
+
+/* Efek navbar */
+.nav-link:active {
+    transform: scale(.92);
+}
+
+/* Khusus HP */
+@media (hover: none) {
+
+    button:active,
+    .btn:active,
+    .social a:active,
+    .contact-item:active,
+    .guestbook-submit:active,
+    .success-card button:active {
+        transform: scale(.94);
+        box-shadow: 0 4px 12px rgba(203, 107, 149, .2);
+    }
+}
+
+/* Aksesibilitas */
+@media (prefers-reduced-motion: reduce) {
+    button,
+    .btn,
+    a,
+    .contact-item {
+        transition: none !important;
+    }
+}
